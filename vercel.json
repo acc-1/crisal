@@ -1,15 +1,20 @@
 {
     "version": 2,
-    "builds": [
+    "builds" :[
         {
-            "src": "index.js",
-            "use": "@vercel/node"
+            "src":"./index.js",
+            "use":"@vercel/node"
         }
     ],
-    "routes": [
+    "routes":[
+        
+        {
+            "src": "/formdata",
+            "dest": "/"
+        },
         {
             "src": "/(.*)",
-            "dest": "/index.js"
+            "dest": "/"
         }
     ]
 }
