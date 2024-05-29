@@ -37,6 +37,7 @@ app.get('/', (req,res)=>{
 // });
 let datosCompletos = [];
 app.post('/formdata', async (req, res) => {
+    console.log("funciona")
     try {
         // Obtener los datos del cuerpo de la solicitud
         const datos = req.body;
