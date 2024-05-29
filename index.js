@@ -15,7 +15,7 @@ app.use(
         type: "*/*"
     })
 )
-app.use(cors());
+app.use(cors({ origin: 'https://crisal-consultora.netlify.app' }));
 //#endregion
 app.get('/', (req,res)=>{
     const htmlResponse=`
