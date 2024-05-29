@@ -3,7 +3,7 @@ const cors = require('cors')
 const Resend = require('resend').Resend;
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 //#region
 app.use(
     express.urlencoded({
@@ -17,10 +17,16 @@ app.use(
 )
 app.use(cors());
 //#endregion
-
-
-app.get('/prueba', (req,res)=>{
-    res.send('Hola, estoy funcionando')
+app.get('/', (req,res)=>{
+    const htmlResponse=`
+    <html>
+     <head> <title> funciona </title>  </head>
+     <body>
+     <h1> Soy un proyecto backend en vercel</h1>
+     </body>
+     </html>
+    `;
+    res.send(htmlResponse);
 })
 
 // app.post('/formdata', (req, res) => {
