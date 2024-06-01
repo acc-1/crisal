@@ -44,7 +44,7 @@ app.post('/formdata', async (req, res) => {
 });
 
 async function enviarCorreoElectronico(datos) {
-    const resend = new Resend('re_1KbYx6kP_5KTCEimwb8cTJfCyTQNcHSGg'); // Replace with your Resend API key
+    const resend = new Resend('re_12egN1hR_KgaHzMiAgG82GzEeSD9iW3d8'); // Replace with your Resend API key
     const htmlContent = `<p>
         <strong>COMPANY NAME:</strong> ${datos.companyName}<br><br><br>
         <strong>RAZON SOCIAL:</strong> ${datos.razonSocial}<br><br><br>
@@ -59,7 +59,7 @@ async function enviarCorreoElectronico(datos) {
 
     const emailOptions = {
         from: 'Crisal Consultora<onboarding@resend.dev>',
-        to: ['agusalt2004@hotmail.com'],
+        to: ['info.crisal.consultora@gmail.com'],
         subject: 'Nuevo Cliente',
         html: htmlContent,
     };
