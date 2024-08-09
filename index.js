@@ -35,7 +35,7 @@ app.post('/formdata', async (req, res) => {
     try {
         const datos = req.body;
         datosCompletos.push(datos);
-        await enviarCorreoElectronico(datos);
+        await enviarCorreoElectronico(datos); // Aquí llamamos a la función async
         res.status(200).send('Datos recibidos correctamente');
     } catch (error) {
         console.error('Error al procesar los datos:', error);
@@ -52,9 +52,6 @@ async function enviarCorreoElectronico(datos) {
         <strong>Número Telefónico:</strong> ${datos.telefono}<br><br>
         <strong>Mensaje:</strong> ${datos.mensaje}<br><br>
     </p>`;
-
-   
-}
 // async function enviarCorreoElectronico(datos) {
 //     const resend = new Resend('re_12egN1hR_KgaHzMiAgG82GzEeSD9iW3d8'); // Replace with your Resend API key
 //     const htmlContent = `<p>
