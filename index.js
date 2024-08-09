@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json({ type: "*/*" }));
 
 app.use(cors({
-    origin: 'https://crisal-consultora.netlify.app', // Remove trailing slash
+    origin: ['https://crisal-consultora.netlify.app', 'https://crisal.netlify.app'],
     methods: ['GET', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type'],
     credentials: true // If you need to send cookies or HTTP Authentication information
