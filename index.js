@@ -43,28 +43,28 @@ app.post('/formdata', async (req, res) => {
     }
 });
 
-async function enviarCorreoElectronico(datos) {
-    const resend = new Resend('re_12egN1hR_KgaHzMiAgG82GzEeSD9iW3d8');
-    const htmlContent = `<p>
-        <strong>Nombre:</strong> ${datos.nombre}<br><br>
-        <strong>Apellido:</strong> ${datos.apellido}<br><br>
-        <strong>Email:</strong> ${datos.email}<br><br>
-        <strong>Número Telefónico:</strong> ${datos.telefono}<br><br>
-        <strong>Mensaje:</strong> ${datos.mensaje}<br><br>
-    </p>`;
 // async function enviarCorreoElectronico(datos) {
-//     const resend = new Resend('re_12egN1hR_KgaHzMiAgG82GzEeSD9iW3d8'); // Replace with your Resend API key
+//     const resend = new Resend('re_12egN1hR_KgaHzMiAgG82GzEeSD9iW3d8');
 //     const htmlContent = `<p>
-//         <strong>COMPANY NAME:</strong> ${datos.companyName}<br><br><br>
-//         <strong>RAZON SOCIAL:</strong> ${datos.razonSocial}<br><br><br>
-//         <strong>CUIT:</strong> ${datos.cuit}<br><br><br>
-//         <strong>CONTACT PHONE:</strong> ${datos.contactPhone}<br><br><br>
-//         <strong>CONTACT EMAIL:</strong> ${datos.contactEmail}<br><br><br>
-//         <strong>DIRECCION:</strong> ${datos.direccion}<br><br><br>
-//         <strong>CODIGO POSTAL:</strong> ${datos.codigoPostal}<br><br><br>
-//         <strong>LOCALIDAD:</strong> ${datos.localidad}<br><br><br>
-//         <strong>REFERENCIA:</strong> ${datos.referencia}<br><br><br>
+//         <strong>Nombre:</strong> ${datos.nombre}<br><br>
+//         <strong>Apellido:</strong> ${datos.apellido}<br><br>
+//         <strong>Email:</strong> ${datos.email}<br><br>
+//         <strong>Número Telefónico:</strong> ${datos.telefono}<br><br>
+//         <strong>Mensaje:</strong> ${datos.mensaje}<br><br>
 //     </p>`;
+async function enviarCorreoElectronico(datos) {
+    const resend = new Resend('re_12egN1hR_KgaHzMiAgG82GzEeSD9iW3d8'); // Replace with your Resend API key
+    const htmlContent = `<p>
+        <strong>COMPANY NAME:</strong> ${datos.companyName}<br><br><br>
+        <strong>RAZON SOCIAL:</strong> ${datos.razonSocial}<br><br><br>
+        <strong>CUIT:</strong> ${datos.cuit}<br><br><br>
+        <strong>CONTACT PHONE:</strong> ${datos.contactPhone}<br><br><br>
+        <strong>CONTACT EMAIL:</strong> ${datos.contactEmail}<br><br><br>
+        <strong>DIRECCION:</strong> ${datos.direccion}<br><br><br>
+        <strong>CODIGO POSTAL:</strong> ${datos.codigoPostal}<br><br><br>
+        <strong>LOCALIDAD:</strong> ${datos.localidad}<br><br><br>
+        <strong>REFERENCIA:</strong> ${datos.referencia}<br><br><br>
+    </p>`;
     const emailOptions = {
         from: 'Crisal Consultora<onboarding@resend.dev>',
         to: ['info.crisal.consultora@gmail.com'],
